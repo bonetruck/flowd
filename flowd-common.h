@@ -19,7 +19,6 @@
 #ifndef _FLOWD_COMMON_H
 #define _FLOWD_COMMON_H
 
-#include "flowd-config.h"
 
 #if defined(HAVE_SYS_CDEFS_H)
 # include <sys/cdefs.h>

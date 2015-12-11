@@ -42,7 +42,7 @@ all: $(TARGETS)
 
 LIBFLOWD_OBJS=		atomicio.o addr.o store.o store-v2.o crc32.o \
 			strlcpy.o strlcat.o
-LIBFLOWD_HEADERS=	flowd-config.h flowd-common.h addr.h crc32.h \
+LIBFLOWD_HEADERS=	flowd-common.h addr.h crc32.h \
 			store.h store-v2.h flowd-pytypes.h
 FLOWD_OBJS=		flowd.o privsep_fdpass.o privsep.o filter.o \
 			parse.o log.o daemon.o peer.o \
@@ -75,7 +75,7 @@ realclean: clean
 	rm -rf build
 
 distclean: realclean
-	rm -f flowd-config.h* flowd-pytypes.h configure
+	rm -f flowd-pytypes.h configure
 
 strip:
 	strip $(TARGETS)
@@ -109,7 +109,6 @@ install-includes: $(LIBFLOWD_HEADERS)
 	$(INSTALL) -m 0644 store-v2.h $(DESTDIR)$(HEADER_DIR)
 	$(INSTALL) -m 0644 crc32.h $(DESTDIR)$(HEADER_DIR)
 	$(INSTALL) -m 0644 flowd-pytypes.h $(DESTDIR)$(HEADER_DIR)
-	$(INSTALL) -m 0644 flowd-config.h $(DESTDIR)$(HEADER_DIR)
 	$(INSTALL) -m 0644 flowd-common.h $(DESTDIR)$(HEADER_DIR)
 
 install: install-bin install-man install-conf install-lib install-includes
